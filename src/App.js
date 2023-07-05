@@ -23,7 +23,8 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      //fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      fetch('arn:aws:lambda:eu-west-2:897016508630:function:ff3-submit-fp')
          .then((response) => response.json())
          .then((data) => {
             console.log(data);
@@ -38,7 +39,7 @@ function App() {
     <div className="App">
      <Menu fixed='top' color='blue' inverted>
             <Menu.Menu>
-              <Menu.Item header href='/'><Icon name='globe' />Andy's Travel Deals</Menu.Item>
+              <Menu.Item header href='/'><Icon name='globe' />Andy's AmplifyApp Deals</Menu.Item>
             </Menu.Menu>
             <Menu.Menu position='right'>
               <Dropdown item simple text='abudgell'>
@@ -60,7 +61,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React For James
         </a>
          <div>
       {posts.map((post) => {
